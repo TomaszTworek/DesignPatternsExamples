@@ -44,4 +44,20 @@ Czyli mamy produkt czyli obiekt, który chcemy utworzyć i klasę factory, któr
 - SRP - kod kreacyjny jest w jednym miejscu w programie
 - Łatwo rozszerzać o nowe sposoby tworzenia obiektów
 
+## Strategia
 
+Wzorzec behawioralny, który pozwala zdefiniować rodzinę algorytmy i umieścić je w osobnych klasach i uczynić obiekty tych klas wymienialnymi
+np. 3 sposoby przewozu paczek i w różnych przypadkach chcemy użyć innego algorytmu
+np. Mamy implementację listy i wstrzykujemy do niej różne strategie sortowania
+
+
+#### Argumenty za:
+- Można odizolować szczegóły implementacyjne algorytmu od kodu, który z niego korzysta
+- Zmiana dziedziczenia na kompozycję
+- Open/Close Principle - Łatwo rozszerzać poprzez dodanie nowych strategii bez zmian w kotekście
+
+#### Argumenty przeciw:
+
+- Klienci muszą być świadomi różnic pomiędzy poszczególnymi strategiami, aby mogli wybrać właściwą.
+Jeśli masz zaledwie kilka algorytmów i rzadko ulegają one zmianie, nie ma wyraźnej potrzeby nadmiernego komplikowania programu przez dodawanie nowych klas i interfejsów związanych z tym wzorcem.
+- Wiele nowoczesnych języków programowania posiada wsparcie dla typów funkcyjnych pozwalających zaimplementować różne wersje algorytmu wewnątrz zestawu anonimowych funkcji. Można następnie korzystać z tych funkcji dokładnie tak jak z obiektów strategia, ale bez konieczności rozbudowy kodu o kolejne klasy i interfejsy.
