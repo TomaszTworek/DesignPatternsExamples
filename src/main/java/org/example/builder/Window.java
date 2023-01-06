@@ -11,4 +11,11 @@ public class Window {
     public Window(boolean isOpen) {
         this.isOpen = isOpen;
     }
+
+    @Override
+    public String toString() {
+        return "Window{" +
+                "isOpen=" + isOpen +
+                '}';
+    }
 }

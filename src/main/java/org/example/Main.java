@@ -1,18 +1,27 @@
 package org.example;
 
-import org.example.singleton.Government;
+import org.example.builder.*;
+
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
 
-        Government government = Government.getInstance();
-        government.increaseTaxes(0.05);
+        House house = House.builder()
+                .rooms(Collections.singletonList(
+                        Room.builder()
+                                .bed(new Bed("IKEA"))
+                                .height(300)
+                                .length(400)
+                                .width(500)
+                                .roomType(RoomType.BEDROOM).build()
+                ))
+                .color("White")
+                .hasGarden(true)
+                .squareFootage(130)
+                .yearOfConstruction(2015)
+                .build();
 
-        System.out.println(government.getTaxes());
-
-        Government government2 = Government.getInstance();
-        government2.increaseTaxes(0.05);
-
-        System.out.println(government2.getTaxes());
+        System.out.println(house);
     }
 }

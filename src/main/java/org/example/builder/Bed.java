@@ -15,4 +15,12 @@ public class Bed {
         this.model = model;
         this.daysSinceSheetChanges = daysSinceSheetChanges;
     }
+
+    @Override
+    public String toString() {
+        return "Bed{" +
+                "model='" + model + '\'' +
+                ", daysSinceSheetChanges=" + daysSinceSheetChanges +
+                '}';
+    }
 }
