@@ -1,12 +1,25 @@
 package org.example.singleton;
 
-//TODO: Make Government class a singleton
-
 public class Government {
 
-    //TODO: 1. Create private constructor to secure from unlimited new objects creation
+    private double taxes = 100;
+    private static Government instance;
 
-    //TODO: 2. Create static method getInstance() that return new instance of this class
+    private Government() {
+    }
 
-    //TODO: 3. Protect from creating new objects - only one can be created. Hint: use static field to control object creating
+    public static Government getInstance() {
+        if (instance == null) {
+            instance = new Government();
+        }
+        return instance;
+    }
+
+    public void increaseTaxes(double value) {
+        taxes += (taxes * value);
+    }
+
+    public double getTaxes() {
+        return taxes;
+    }
 }
