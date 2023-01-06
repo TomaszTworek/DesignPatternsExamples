@@ -15,3 +15,18 @@ Przykłady:
 - Database connector
 - Government
 
+## Builder
+
+Wzorzec kracyjny, który daje możliwość tworzenia złożonych obiektów etapmi, dzięki czemu nie musimy pamiętać o kolejności argumentów.
+
+#### Argumenty za:
+- Mamy możliwość dowolnej konfiguracji obiektu, wypełniajac tylko niezbędne pola.
+- Nie musimy pamiętać ko kolejności parametrów w konstruktorze.
+- Można konstruować obiekty etapami
+
+#### Argumenty przeciw:
+
+- Skomplikowany kod na start (rozwiazuje to biblioteka Lombok)
+
+
+
