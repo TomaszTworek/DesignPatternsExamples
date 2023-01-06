@@ -28,5 +28,20 @@ Wzorzec kracyjny, który daje możliwość tworzenia złożonych obiektów etapm
 
 - Skomplikowany kod na start (rozwiazuje to biblioteka Lombok)
 
+## Metoda wytwórcza
+
+Wzorzec kreacyjny, który udostepnia intefejs do tworzenia obiektów w ramach klasy bazowej, ale pozwala podklasom zmieniać typ tworzonych obiektów.
+W praktyce tworzymy metodę która opakowuje tworzenie obiektu.
+Po co nam to?
+- Możemy mieć skomplikowana logikę biznesowa która jest potrzebna przed stworzeniem obiektu
+- Możemy użyć polimofizmu i zdecydować jaki typ obiektu utworzyć
+
+Używamy, jeżeli na wejściu nie wiemy jaki obiekt chcemy utworzyć i mamy jakas logikę która stoi przy tworzeniu tych obiektów.
+Czyli mamy produkt czyli obiekt, który chcemy utworzyć i klasę factory, która definiuje jak tworzy obiekt.
+
+#### Argumenty za:
+
+- SRP - kod kreacyjny jest w jednym miejscu w programie
+- Łatwo rozszerzać o nowe sposoby tworzenia obiektów
 
 
