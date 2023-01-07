@@ -10,7 +10,7 @@ public class Main {
     //TODO: in our case way count fees as see route fees and land road fees.
     //TODO: 2. Think what if we have other means of transport that have same algorithm that count fees.
     //TODO: 3. Create strategy pattern for LandFees and SeeFees.
-    //TODO: 4. When creating a car in below example given this strategy in constructor
+    //TODO: 4. When creating a car in below example give this strategy in constructor
 
     private static TransportFactory transportFactory;
 
