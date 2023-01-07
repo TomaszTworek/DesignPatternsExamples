@@ -1,6 +1,18 @@
 package org.example.factory;
 
-public class Truck implements Conveyance{
+import org.example.factory.strategy.CalculateFeesStrategy;
+
+public class Truck implements Conveyance {
+
+    private CalculateFeesStrategy calculateFeesStrategy;
+
+    public Truck() {
+    }
+
+    public Truck(CalculateFeesStrategy calculateFeesStrategy) {
+        this.calculateFeesStrategy = calculateFeesStrategy;
+    }
+
     @Override
     public void deliver() {
         System.out.println("Truck deliver");
@@ -8,6 +20,7 @@ public class Truck implements Conveyance{
 
     @Override
     public double calculateFees(double km) {
-        return km * 10;
+        return calculateFeesStrategy.calculate(km);
     }
+
 }
